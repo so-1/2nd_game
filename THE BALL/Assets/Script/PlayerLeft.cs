@@ -19,7 +19,7 @@ public class PlayerLeft : MonoBehaviour
         if (Left == true)
         {
             Vector3 PlayerPos = player.transform.localPosition;
-            PlayerPos.x -= (1.0f * Time.deltaTime);
+            PlayerPos.x -= (2.0f * Time.deltaTime);
             if (PlayerPos.x < -2.73f) { PlayerPos.x = -2.73f; }
             player.transform.localPosition = PlayerPos;
         }
