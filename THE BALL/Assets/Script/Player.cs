@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     // PlayerBulletプレハブ
     public GameObject bullet;
-
+    /*
     // Startメソッドをコルーチンとして呼び出す
     IEnumerator Start()
     {
@@ -20,7 +20,13 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
     }
+    */
 
+
+    public void Fire()
+    {
+        Instantiate(bullet,transform.position, transform.rotation);
+    }
 
 
 
