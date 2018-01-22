@@ -895,6 +895,26 @@ GameObject:
   m_PrefabParentObject: {fileID: 1089941322536908, guid: 85e659a2cae654d4c8426ffef9781db2,
     type: 2}
   m_PrefabInternal: {fileID: 1251030680}
+--- !u!50 &994759924
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 994759923}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1251030680
 Prefab:
   m_ObjectHideFlags: 0
@@ -942,6 +962,26 @@ GameObject:
   m_PrefabParentObject: {fileID: 1823602019736784, guid: eb8ccd61ca95d94489ab61fcd51698b2,
     type: 2}
   m_PrefabInternal: {fileID: 1282702310}
+--- !u!50 &1255058160
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1255058159}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1282702310
 Prefab:
   m_ObjectHideFlags: 0
