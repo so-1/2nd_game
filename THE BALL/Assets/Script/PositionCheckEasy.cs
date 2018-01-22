@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PositionCheck : MonoBehaviour
+public class PositionCheckEasy : MonoBehaviour
 {
 
 

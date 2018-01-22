@@ -35,21 +35,5 @@ public class BossScript : MonoBehaviour {
         
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-
-        // 弾の削除
-        Destroy(col.gameObject);
-        Vector3 Obj = GetComponent<Transform>().localScale;
-        this.transform.localScale = new Vector3(Obj.x -= 0.01f,Obj.y -= 0.01f,Obj.z -= 0.01f);
-        BosHP--;
-        anim.Play();
-
-        // プレイヤーを削除
-
-        if (BosHP <=0) {
-            Destroy(gameObject);
-        }
-     
-    }
+   
 }
