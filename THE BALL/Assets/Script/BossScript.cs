@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossScript : MonoBehaviour {
+public class BossScript : MonoBehaviour
+{
 
-    int BosHP = 30;
+    int BosHP = 10;
     float moveX = 4.5f;
-    Animation anim;
-	// Use this for initialization
-	void Start () {
-        anim = this.gameObject.GetComponent<Animation>();
+
+    // Use this for initialization
+    void Start()
+    {
+       
     }
 
     void Update()
     {
-       
+
 
         Move();
 
@@ -25,15 +27,24 @@ public class BossScript : MonoBehaviour {
         if (LimitX >= 0)
         {
             //自分のy位置を＋方向に毎回「0.03f」ずつ移動させる。
-            this.transform.position += new Vector3(moveX*Time.deltaTime, 0, 0);
+            this.transform.position += new Vector3(moveX * Time.deltaTime, 0, 0);
         }
         if (LimitX < 0)
         {
             //自分のy位置を＋方向に毎回「0.03f」ずつ移動させる。
             this.transform.position -= new Vector3(moveX * Time.deltaTime, 0, 0);
         }
-        
-    }
 
-   
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        BosHP--;
+        Destroy(col.gameObject);
+        gameObject.transform.localScale -= new Vector3(0.01f, 0.01f, 0);
+        if (BosHP < 0)
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
 }

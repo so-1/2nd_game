@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50945021509602330}
   - component: {fileID: 61236273602694060}
   - component: {fileID: 111976982436573978}
+  - component: {fileID: 114274293136347262}
   m_Layer: 0
   m_Name: BOSS
   m_TagString: Untagged
@@ -103,6 +104,17 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &114274293136347262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908592159023282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1e28365319f344b80fe4002e0a1aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114531154135662312
 MonoBehaviour:
   m_ObjectHideFlags: 1

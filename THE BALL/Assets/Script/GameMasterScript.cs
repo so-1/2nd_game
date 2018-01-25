@@ -11,7 +11,7 @@ public class GameMasterScript : MonoBehaviour
 
 	// エネルギーがこの値を超えると敵キャラクターが出現する
 	// 敵キャラクターの出現頻度を多くしたければ少なめに、出現頻度少なくしたければ多めに調整
-	float LIMIT = 1;
+	float LIMIT = 2;
 
 	// 最後にチェックした時のx座標を記録するインスタンスメンバ
 	float lastY = 0;
@@ -50,7 +50,7 @@ public class GameMasterScript : MonoBehaviour
 
 
 		// エネルギーがLIMITを超えてるか判定
-		if (LIMIT < energy) {
+		if (LIMIT <= energy) {
 			// エネルギーを0に戻す
 			energy = 0;
 
@@ -64,13 +64,16 @@ public class GameMasterScript : MonoBehaviour
 			Vector3 pos = new Vector3 (0, 0, 0);
 
 			// X座標は、カメラの撮影範囲から少しだけ右の座標を出現位置として取得
-			pos.y = (Camera.main.ViewportToWorldPoint (new Vector2 (0, 1.4f)).y);
+			pos.y = (Camera.main.ViewportToWorldPoint (new Vector2 (0, 1.3f)).y);
 
-			// Y座標はカメラと同じ座標にする
-			pos.x = camera.transform.position.x;
+            // Y座標はカメラと同じ座標にする
+            float RandomX = Random.Range(-1.0f, 1.0f);
+            pos.x = camera.transform.position.x+RandomX;
 
-			// 敵キャラクターのゲームオブジェクトを作成
-			Instantiate (obj, pos, Quaternion.identity);
+
+
+            // 敵キャラクターのゲームオブジェクトを作成
+            Instantiate (obj, pos, Quaternion.identity);
 		}
 	}
     /*

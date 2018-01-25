@@ -58,4 +58,9 @@ public class Player : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = direction * speed;
     }
 
+   void OnTriggerEnter2D(Collider2D col2)
+    {
+        //Destroy(col2.gameObject);
+       
+    }
 }

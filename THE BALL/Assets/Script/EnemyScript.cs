@@ -16,12 +16,22 @@ public class EnemyScript : MonoBehaviour {
     // ぶつかった瞬間に呼び出される
     void OnTriggerEnter2D(Collider2D col)
     {
-        // 弾の削除
-        Destroy(col.gameObject);
+        
         
 
-        // プレイヤーを削除
-        Destroy(gameObject);
+        if (col.tag == "Ballet")
+        {
+            // 弾の削除
+            Destroy(col.gameObject);
+            // 敵を削除
+            Destroy(gameObject);
+        }
+        if (col.tag == "Player")
+        {
+            // プレイヤーの非常時
+            col.gameObject.SetActive(false);
+            
+        }
     }
 
 }
