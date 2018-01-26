@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class Player : MonoBehaviour
     {
 
         Move();
+        moveY += 0.0001f;
 
         // 右・左
         float x = Input.GetAxisRaw("Horizontal");
@@ -60,7 +62,34 @@ public class Player : MonoBehaviour
 
    void OnTriggerEnter2D(Collider2D col2)
     {
-        //Destroy(col2.gameObject);
-       
+        if (col2.tag == "Enemy")
+        {
+            //Destroy(col2.gameObject);
+            //Invoke("SceneRestart", 3.5f);
+            GameObject CanvasObj = GameObject.Find("Canvas");
+            GameObject gameObject = CanvasObj.transform.Find("GameOver").gameObject;
+            gameObject.SetActive(true);
+
+            GameObject Retry = CanvasObj.transform.Find("RetryButton").gameObject;
+            Retry.SetActive(true);
+
+            GameObject Left = CanvasObj.transform.Find("LeftButton").gameObject;
+            Left.SetActive(false);
+            GameObject Right = CanvasObj.transform.Find("RightButton").gameObject;
+            Right.SetActive(false);
+            GameObject Fire = CanvasObj.transform.Find("Fire").gameObject;
+            Fire.SetActive(false);
+
+
+        }
+
+    }
+    public void SceneRestart()
+    {
+        // 現在のシーン番号を取得
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // 現在のシーンを再読込する
+        SceneManager.LoadScene(sceneIndex);
     }
 }

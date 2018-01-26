@@ -21,8 +21,8 @@ public class GameMasterScript : MonoBehaviour
 		// 敵キャラを出現させるメソッドを呼び出す
 		EnemyAppend ();
 
-		// スコアを表示するメソッドを呼び出す
-		// ScoreDisplay ();
+        // スコアを表示するメソッドを呼び出す
+        ScoreDisplay ();
 
 		// ハイスコアを表示するメソッドを呼び出す
 		// HighScoreDisplay ();
@@ -67,7 +67,7 @@ public class GameMasterScript : MonoBehaviour
 			pos.y = (Camera.main.ViewportToWorldPoint (new Vector2 (0, 1.3f)).y);
 
             // Y座標はカメラと同じ座標にする
-            float RandomX = Random.Range(-1.0f, 1.0f);
+            float RandomX = Random.Range(-2.4f, 2.4f);
             pos.x = camera.transform.position.x+RandomX;
 
 
@@ -76,12 +76,12 @@ public class GameMasterScript : MonoBehaviour
             Instantiate (obj, pos, Quaternion.identity);
 		}
 	}
-    /*
+    
 	// スコアを表示するメソッド
 	void ScoreDisplay ()
 	{
 		// 主人公のゲームオブジェクトを取得
-		GameObject hero = GameObject.Find ("HERO");
+		GameObject hero = GameObject.Find ("PLAYER");
 
 		// 主人公の生存確認（食べられたあとはnullになる）
 		if (null == hero) {
@@ -89,7 +89,7 @@ public class GameMasterScript : MonoBehaviour
 		}
 
 		// 主人公のx座標を取得し、泳いだ距離とする
-		float swimDistance = hero.transform.position.x;
+		float swimDistance = hero.transform.position.y +2.5f;
 
 		// スコアのゲームオブジェクトを取得
 		GameObject score = GameObject.Find ("Score");
@@ -102,10 +102,10 @@ public class GameMasterScript : MonoBehaviour
 		// 小数点以下が表示されないようにint型に変換し、距離の単位として「m」を追加しておく
 		textComponent.text = "Score:" + (int)swimDistance + "m";
 	}
-
+    /*
 	// ハイスコア保存用のインスタンスメンバ
 	float highScore = 0;
-
+    
 	// ハイスコアを表示するメソッド
 	void HighScoreDisplay ()
 	{
