@@ -1,4 +1,5 @@
 
+AdMob.cs
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -34,3 +35,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.keystore
